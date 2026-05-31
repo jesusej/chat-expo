@@ -1,6 +1,7 @@
-import MessageList from "@/components/MessageList";
-import { TextInput, View, Text } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import ChatInput from "@/components/ChatInput";
+import MessageList from "@/components/MessageList";
 
 export default function Chat() {
   const insets = useSafeAreaInsets();
@@ -11,14 +12,7 @@ export default function Chat() {
         style={{ paddingBottom: insets.bottom }}
       >
         <MessageList />
-        <View className="flex-row justify-center items-center">
-          <View className="bg-white rounded-full px-1 mx-2 ">
-            <Text className="text-2xl">+</Text>
-          </View>
-          <View className="flex-grow bg-white rounded-full">
-            <TextInput className="text-2xl px-2" multiline />
-          </View>
-        </View>
+        <ChatInput />
       </View>
     </View>
   );
